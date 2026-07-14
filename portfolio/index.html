@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South Shore Sites — one-page websites for local businesses, $300 flat</title>
+<meta name="description" content="Modern one-page websites for Quincy & South Shore service businesses. Built first — you pay only if you want it. $300 flat, no monthly fees.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2F4B; --navy-deep:#132238; --fog:#F4F4F0; --white:#FFFFFF;
+  --slate:#5E6773; --yellow:#F5B700; --line:#DDDED7;
+  --display:"Bricolage Grotesque",sans-serif; --body:"Instrument Sans",sans-serif;
+  --mono:"Spline Sans Mono",monospace;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font:16px/1.6 var(--body);color:var(--navy);background:var(--fog)}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;font:600 15px var(--body);background:var(--navy);color:var(--white);
+  padding:14px 26px;border-radius:8px;text-decoration:none;border:2px solid var(--navy)}
+.btn:hover{background:var(--navy-deep)}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+
+/* header */
+header{padding:20px 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:14px}
+.mark{width:34px;height:34px;background:var(--navy);border-radius:7px;position:relative;flex:none}
+.mark::after{content:"";position:absolute;inset:auto 6px 7px 6px;height:5px;background:var(--yellow);border-radius:2px}
+.logo{font:800 18px var(--display);letter-spacing:-.01em}
+header nav{margin-left:auto;display:flex;gap:22px;font-weight:500;font-size:15px}
+header nav a{text-decoration:none;color:var(--slate)}
+header nav a:hover{color:var(--navy)}
+
+/* hero */
+.hero{padding:84px 0 70px}
+.hero h1{font:800 clamp(38px,6vw,64px)/1.03 var(--display);letter-spacing:-.025em;max-width:15ch}
+.hero h1 em{font-style:normal;box-shadow:inset 0 -0.32em var(--yellow)}
+.hero p.lede{margin:22px 0 30px;font-size:19px;color:var(--slate);max-width:52ch}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero .note{font:500 13px var(--mono);color:var(--slate)}
+
+/* the deal */
+.deal{background:var(--navy);color:var(--fog);padding:64px 0}
+.deal h2{font:700 clamp(26px,3.6vw,36px) var(--display);letter-spacing:-.02em;max-width:24ch}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;
+  margin-top:36px;background:rgba(255,255,255,.14);border-radius:12px;overflow:hidden}
+.step{background:var(--navy-deep);padding:26px 24px}
+.step b{display:block;font:700 17px var(--display);margin:10px 0 6px}
+.step span{color:#B9C2CF;font-size:14.5px}
+.step .k{font:500 12px var(--mono);color:var(--yellow);letter-spacing:.1em}
+.price{margin-top:30px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.price .num{font:800 46px var(--display)}
+.price .fine{color:#B9C2CF;font-size:14.5px;max-width:44ch}
+
+/* work — browser-frame proof sheet (signature) */
+.work{padding:74px 0}
+.work h2{font:700 clamp(26px,3.6vw,36px) var(--display);letter-spacing:-.02em}
+.work p.sub{color:var(--slate);margin:10px 0 34px;max-width:56ch}
+.sheet{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.frame{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  text-decoration:none;box-shadow:0 1px 2px rgba(19,34,56,.06);transition:transform .18s,box-shadow .18s;display:block}
+.frame:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 14px 28px rgba(19,34,56,.14)}
+.chrome{display:flex;gap:6px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--fog)}
+.chrome i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.chrome .url{font:500 11px var(--mono);color:var(--slate);margin-left:8px;letter-spacing:.02em}
+.shot{height:190px;display:flex;flex-direction:column;justify-content:center;padding:0 26px;gap:8px}
+.shot .t{font:800 22px var(--display);letter-spacing:-.02em}
+.shot .s{font-size:13px}
+.shot.landscape{background:linear-gradient(160deg,#223528 0%,#2C4A33 70%);color:#FBFBF7}
+.shot.landscape .s{color:#C9D6C4}
+.shot.coming{background:repeating-linear-gradient(-45deg,var(--fog),var(--fog) 12px,#ECEDE6 12px,#ECEDE6 24px);color:var(--slate)}
+.cap{padding:14px 16px;font-size:14px;color:var(--slate);display:flex;justify-content:space-between;align-items:center}
+.cap b{color:var(--navy);font-weight:600}
+.tag{font:500 11px var(--mono);background:var(--fog);border:1px solid var(--line);border-radius:5px;padding:3px 8px}
+
+/* who */
+.who{padding:0 0 74px}
+.who .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:34px;
+  display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.who h3{font:700 22px var(--display);margin-bottom:10px}
+.who p{color:var(--slate);font-size:15.5px}
+.who ul{margin:12px 0 0;padding:0;list-style:none;color:var(--slate);font-size:15.5px}
+.who li{padding:7px 0 7px 26px;position:relative}
+.who li::before{content:"";position:absolute;left:0;top:14px;width:14px;height:6px;background:var(--yellow);border-radius:2px}
+
+/* contact */
+.contact{background:var(--navy);color:var(--fog);padding:64px 0;text-align:center}
+.contact h2{font:700 clamp(26px,3.6vw,36px) var(--display);letter-spacing:-.02em}
+.contact p{color:#B9C2CF;margin:12px auto 26px;max-width:46ch}
+.contact .btn{background:var(--yellow);border-color:var(--yellow);color:var(--navy-deep);font-weight:600}
+.contact .btn:hover{filter:brightness(1.06)}
+footer{padding:26px 0;font:500 12px var(--mono);color:var(--slate);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){.who .card{grid-template-columns:1fr}.hero{padding:60px 0 54px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="logo">South Shore Sites</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#deal">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Quincy · Braintree · Weymouth · the South Shore</p>
+    <h1 style="margin-top:14px">Your business deserves more than <em>a Facebook page.</em></h1>
+    <p class="lede">I build clean, fast, one-page websites for local service businesses — landscapers, barbers, cleaners, contractors. Yours could be done before we ever talk.</p>
+    <div class="cta">
+      <a class="btn" href="#deal">See how it works</a>
+      <a class="btn ghost" href="#work">View sample sites</a>
+      <span class="note">$300 flat · no monthly fees</span>
+    </div>
+  </div>
+</section>
+
+<section class="deal" id="deal">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#8fa0b8">The deal</p>
+    <h2 style="margin-top:12px">I build your site first. You pay only if you want it.</h2>
+    <div class="steps">
+      <div class="step"><span class="k">STEP 1</span><b>You get a link</b><span>I build a draft of your site — your name, your services, your reviews — and send it over. Unannounced. Free.</span></div>
+      <div class="step"><span class="k">STEP 2</span><b>You take a look</b><span>Like it? We tweak anything you want — photos, wording, prices. Don't like it? Delete the message. No hard feelings.</span></div>
+      <div class="step"><span class="k">STEP 3</span><b>It goes live</b><span>One flat payment and your site is live within 48 hours, connected to your own web address, with a quote form that goes to your phone.</span></div>
+    </div>
+    <div class="price">
+      <span class="num">$300</span>
+      <span class="fine">One time. Includes design, mobile layout, a quote-request form, Google Maps, and launch. No subscriptions, no hosting bills, no upsells. Changes later are $40 a round or DIY — you own everything.</span>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <h2>Sample work</h2>
+    <p class="sub">Every site is built one at a time, around what the business actually does — not dropped into a template. Click through and poke around; they work on a phone, because that's where your customers are.</p>
+    <div class="sheet">
+      <a class="frame" href="../demo-landscape/">
+        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">granitecoastlandscape.com</span></div>
+        <div class="shot landscape"><span class="t">Granite Coast Landscape</span><span class="s">Sharp lawns. Square edges. Quincy, MA.</span></div>
+        <div class="cap"><b>Landscaping · one-pager</b><span class="tag">SAMPLE</span></div>
+      </a>
+      <div class="frame" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">your-business-here.com</span></div>
+        <div class="shot coming"><span class="t" style="font-size:18px">Your site could be next</span><span class="s">Barbershops, cleaners, contractors, gyms…</span></div>
+        <div class="cap"><b>In progress</b><span class="tag">NEXT</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <div class="card">
+      <div>
+        <h3>Why I do it this way</h3>
+        <p>Most web shops make you sit through a sales call, sign a contract, and wait a month. I'd rather just show you the work. If the site isn't obviously better than what you have, you shouldn't pay for it — and you won't have wasted a minute finding out.</p>
+      </div>
+      <div>
+        <h3>What you get</h3>
+        <ul>
+          <li>A one-page site that loads fast and looks right on every phone</li>
+          <li>A quote-request form that lands in your email or texts</li>
+          <li>Your hours, service area, reviews, and map — findable on Google</li>
+          <li>Launched on your own domain within 48 hours of a yes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Have a business? Want a draft?</h2>
+    <p>Send your business name and town. You'll get a link to your draft site — free, no obligation, usually within two days.</p>
+    <a class="btn" href="mailto:HELLO@EXAMPLE.COM?subject=Website%20draft%20for%20my%20business">Email me your business name</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>SOUTH SHORE SITES · QUINCY, MA</span>
+  <span>BUILT ONE AT A TIME</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Granite Coast Landscape — lawn care & landscaping in Quincy, MA</title>
+<meta name="description" content="Weekly mowing, cleanups, mulch & edging, and snow removal for Quincy, Braintree & Weymouth. Family-run, fully insured. Free quotes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#223528; --moss:#2C4A33; --leaf:#4F7942; --day:#FBFBF7; --card:#FFFFFF;
+  --sand:#E4DDCB; --mute:#5F6D60; --line:#E0E3DA;
+  --display:"Archivo",sans-serif; --body:"Instrument Sans",sans-serif; --mono:"Spline Sans Mono",monospace;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font:16px/1.6 var(--body);color:var(--ink);background:var(--day)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--leaf);outline-offset:2px}
+.btn{display:inline-block;font:600 15px var(--body);background:var(--ink);color:var(--day);
+  padding:14px 26px;border-radius:8px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:var(--moss)}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+/* sample badge */
+.badge{position:fixed;bottom:14px;right:14px;z-index:9;background:var(--ink);color:var(--day);
+  font:500 11px var(--mono);letter-spacing:.06em;padding:8px 12px;border-radius:7px;text-decoration:none;opacity:.92}
+.badge:hover{opacity:1}
+
+/* header */
+header{background:var(--day);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;gap:12px;padding-top:16px;padding-bottom:16px}
+.mark{width:34px;height:34px;flex:none;border-radius:8px;background:var(--moss);position:relative;overflow:hidden}
+.mark::after{content:"";position:absolute;left:5px;right:5px;bottom:6px;height:3px;background:var(--sand);
+  box-shadow:0 -6px 0 var(--sand),0 -12px 0 var(--sand)}
+.logo{font:800 17px var(--display);letter-spacing:-.01em;text-transform:uppercase}
+.logo small{display:block;font:500 10.5px var(--mono);letter-spacing:.14em;color:var(--mute)}
+header .call{margin-left:auto;text-align:right}
+header .call a{font:800 18px var(--display);color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+header .call span{display:block;font:500 11px var(--mono);color:var(--mute);letter-spacing:.08em}
+
+/* hero */
+.hero{background:linear-gradient(165deg,var(--ink) 0%,var(--moss) 90%);color:var(--day);padding:78px 0 66px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -60px -110px auto;width:420px;height:420px;border-radius:50%;
+  border:64px solid rgba(228,221,203,.10)}
+.hero h1{font:800 clamp(36px,5.6vw,58px)/1.04 var(--display);letter-spacing:-.02em;max-width:16ch;text-transform:uppercase}
+.hero p{margin:20px 0 30px;color:#D4DCCF;font-size:18px;max-width:46ch}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero .btn{background:var(--sand);color:var(--ink)}
+.hero .btn:hover{filter:brightness(1.05)}
+.hero .btn.ghost{background:transparent;color:var(--day);border:2px solid rgba(251,251,247,.5)}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;font:500 12.5px var(--mono);letter-spacing:.05em;color:#C6D0C0}
+.trust b{color:var(--sand)}
+
+/* season strip — the signature: MA landscaping runs on a calendar */
+.season{padding:64px 0}
+.season h2,.services h2,.reviews h2,.quote h2{font:800 clamp(24px,3.4vw,34px) var(--display);letter-spacing:-.02em;text-transform:uppercase}
+.season p.sub{color:var(--mute);margin:10px 0 30px;max-width:58ch}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+.season-cell{padding:24px 22px;border-left:1px solid var(--line)}
+.season-cell:first-child{border-left:0}
+.season-cell .mo{font:500 11px var(--mono);letter-spacing:.12em;color:var(--mute)}
+.season-cell h3{font:800 19px var(--display);margin:8px 0 6px;text-transform:uppercase}
+.season-cell p{font-size:14px;color:var(--mute)}
+.season-cell.now{background:linear-gradient(180deg,#F1F4EC, var(--card));box-shadow:inset 0 4px 0 var(--leaf)}
+.season-cell.now .mo::after{content:"● WE'RE HERE";color:var(--leaf);margin-left:8px}
+
+/* services */
+.services{padding:8px 0 64px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:28px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.svc h3{font:800 17px var(--display);text-transform:uppercase;letter-spacing:.01em}
+.svc p{color:var(--mute);font-size:14.5px;margin-top:8px}
+.svc .from{display:inline-block;margin-top:14px;font:500 12px var(--mono);background:#F1F4EC;border:1px solid var(--line);
+  border-radius:6px;padding:4px 9px;color:var(--moss)}
+
+/* reviews */
+.reviews{background:var(--ink);color:var(--day);padding:60px 0}
+.reviews .grid{margin-top:26px}
+.rev{background:rgba(251,251,247,.06);border:1px solid rgba(251,251,247,.14);border-radius:12px;padding:22px}
+.rev p{font-size:15.5px;color:#DCE3D6}
+.rev b{display:block;margin-top:14px;font:500 12px var(--mono);letter-spacing:.08em;color:var(--sand)}
+.stars{color:var(--sand);letter-spacing:2px;margin-bottom:10px}
+
+/* quote */
+.quote{padding:66px 0}
+.quote .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:34px;
+  display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:26px}
+.quote label{display:block;font:600 13.5px var(--body);margin:14px 0 6px}
+.quote input,.quote select{width:100%;padding:12px 14px;font:15px var(--body);color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;background:var(--day)}
+.quote .btn{margin-top:20px;width:100%}
+.aside h3{font:800 18px var(--display);text-transform:uppercase}
+.aside p{color:var(--mute);font-size:15px;margin-top:8px}
+.aside .row{display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding:10px 0;font-size:14.5px}
+.aside .row b{font:500 12.5px var(--mono)}
+.ok{display:none;background:#F1F4EC;border:1px solid var(--leaf);border-radius:10px;padding:16px;margin-top:18px;font-size:14.5px}
+footer{border-top:1px solid var(--line);padding:26px 0;font:500 12px var(--mono);color:var(--mute);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:820px){.strip{grid-template-columns:1fr 1fr}.season-cell{border-top:1px solid var(--line)}
+  .quote .card{grid-template-columns:1fr}.hero{padding:60px 0 52px}}
+</style>
+</head>
+<body>
+<a class="badge" href="../portfolio/">SAMPLE SITE · SOUTH SHORE SITES</a>
+
+<header>
+  <div class="wrap">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="logo">Granite Coast Landscape<small>QUINCY · BRAINTREE · WEYMOUTH</small></div>
+    <div class="call"><a href="tel:+16175550137">(617) 555-0137</a><span>CALL OR TEXT · MON–SAT</span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#AEBCA6">Family-run · fully insured · est. 2011</p>
+    <h1 style="margin-top:12px">Sharp lawns.<br>Square edges.<br>On the day we said.</h1>
+    <p>Weekly mowing and full-service landscaping for the South Shore. No contracts for residential mowing — we earn the driveway every week.</p>
+    <div class="cta">
+      <a class="btn" href="#quote">Get a free quote</a>
+      <a class="btn ghost" href="tel:+16175550137">Call (617) 555-0137</a>
+    </div>
+    <div class="trust">
+      <span><b>200+</b> lawns maintained</span>
+      <span><b>48-hr</b> quote turnaround</span>
+      <span><b>Insured</b> & registered in MA</span>
+    </div>
+  </div>
+</section>
+
+<section class="season">
+  <div class="wrap">
+    <p class="eyebrow">The year, the way we work it</p>
+    <h2 style="margin-top:10px">A South Shore yard runs on a calendar</h2>
+    <p class="sub">Book the season, not just the visit — spring and fall slots fill first, and mowing customers get first call on cleanups and snow.</p>
+    <div class="strip">
+      <div class="season-cell"><span class="mo">MAR – APR</span><h3>Spring cleanup</h3><p>Beds cleared, first cut, dethatch & edge — the yard reset.</p></div>
+      <div class="season-cell now"><span class="mo">MAY – SEP</span><h3>Weekly mowing</h3><p>Same crew, same day each week. Trimmed, edged, blown clean.</p></div>
+      <div class="season-cell"><span class="mo">OCT – NOV</span><h3>Fall cleanup</h3><p>Leaves out, gutters optional, beds put down for winter.</p></div>
+      <div class="season-cell"><span class="mo">DEC – FEB</span><h3>Snow removal</h3><p>Driveways & walks on a per-storm or seasonal rate.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <div class="grid">
+      <div class="svc"><h3>Weekly mowing</h3><p>Cut, trim, edge, blow — most Quincy lots done in under an hour, billed monthly.</p><span class="from">FROM $45 / VISIT</span></div>
+      <div class="svc"><h3>Mulch & edging</h3><p>Premium bark mulch installed with a clean spade edge that holds its line all summer.</p><span class="from">FROM $85 / YARD INSTALLED</span></div>
+      <div class="svc"><h3>Hedge & shrub trimming</h3><p>Shaped by hand and cleaned up completely — clippings leave with us.</p><span class="from">QUOTED ON SITE</span></div>
+      <div class="svc"><h3>Spring / fall cleanups</h3><p>Full property reset: leaves, beds, first or final cut, haul-away included.</p><span class="from">FROM $250</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#AEBCA6">Neighbors' words</p>
+    <h2 style="margin-top:10px">The reviews we're proudest of</h2>
+    <div class="grid">
+      <div class="rev"><div class="stars" aria-label="5 stars">★★★★★</div><p>"They show up the same day every week, and the edges look like they were done with a ruler. Easiest checkbox on my list."</p><b>— MARIA T., WOLLASTON</b></div>
+      <div class="rev"><div class="stars" aria-label="5 stars">★★★★★</div><p>"Quoted the cleanup in a day, did it two days later, yard looked brand new. Fair price, zero chasing."</p><b>— DAN K., BRAINTREE</b></div>
+      <div class="rev"><div class="stars" aria-label="5 stars">★★★★★</div><p>"We've been through three landscapers. This is the one we stopped looking after."</p><b>— THE PELLETIERS, NORTH QUINCY</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <h2>Get a free quote</h2>
+    <div class="card">
+      <form id="qf">
+        <label for="n">Your name</label>
+        <input id="n" name="name" required autocomplete="name">
+        <label for="a">Street & town</label>
+        <input id="a" name="address" required placeholder="12 Shore Ave, Quincy" autocomplete="street-address">
+        <label for="s">What do you need?</label>
+        <select id="s" name="service">
+          <option>Weekly mowing</option><option>Spring / fall cleanup</option>
+          <option>Mulch & edging</option><option>Hedge trimming</option><option>Snow removal</option>
+        </select>
+        <label for="p">Phone (we'll text your quote)</label>
+        <input id="p" name="phone" type="tel" required autocomplete="tel">
+        <button class="btn" type="submit">Send my quote request</button>
+        <div class="ok" id="ok">Got it — this is a sample site, so nothing was actually sent. On the live version, this lands straight in the owner's texts. </div>
+      </form>
+      <div class="aside">
+        <h3>How quoting works</h3>
+        <p>Most quotes go out within 48 hours. Mowing is priced by lot from the address — no visit needed. Cleanups and mulch get a quick walk-through.</p>
+        <div class="row" style="margin-top:18px"><span>Serving</span><b>QUINCY · BRAINTREE · WEYMOUTH</b></div>
+        <div class="row"><span>Hours</span><b>MON–SAT, 7AM–5PM</b></div>
+        <div class="row"><span>Response</span><b>SAME DAY, MOST DAYS</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>GRANITE COAST LANDSCAPE · QUINCY, MA</span>
+  <span>FULLY INSURED · FREE QUOTES</span>
+</footer>
+
+<script>
+document.getElementById("qf").addEventListener("submit", function(e){
+  e.preventDefault();
+  document.getElementById("ok").style.display = "block";
+});
+</script>
+</body>
+</html>
