@@ -18,9 +18,9 @@ then you lead with Message B).
 
 ## Message A — no demo yet (Facebook DM or text)
 
-> Hi — I build one-page websites for [TOWN] businesses. I noticed [BUSINESS NAME]
-> doesn't have one, so people who find you on Google can't see your services or
-> request a quote. I'll build you a full draft for free — you only pay ($300 flat,
+> Hi — I build one-page websites for [TOWN] businesses. When I looked up
+> [BUSINESS NAME], there was no website linked on your Google listing — so people
+> finding you on Maps can't see your services or request a quote. I'll build you a full draft for free — you only pay ($300 flat,
 > no monthly fees) if you want it live. Want me to put one together? Takes me two
 > days. Sample of my work: [PORTFOLIO LINK]
 
@@ -36,6 +36,12 @@ then you lead with Message B).
 
 - **"How much?"** → "$300 one time. That covers everything — design, your own
   domain setup, a quote form that texts you, and launch. No subscriptions."
+- **"We actually have a website."** -> "Ah — it isn't linked on your Google
+  Business Profile, which means people finding you on Maps never see it. Worth
+  fixing either way: log into business.google.com and add it under Edit profile,
+  takes two minutes. And if you ever want the site itself refreshed, you know
+  where I am." (Being wrong gracefully = being helpful. Some of these turn into
+  clients later.)
 - **"I already get enough work."** → "Totally fair — most of my clients did too.
   The site mostly just stops the leads you're already getting from calling the
   next guy on Google. Offer stands if that ever changes."
