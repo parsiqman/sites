@@ -62,6 +62,17 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-off
 .job .p small{display:block;font:600 10.5px var(--body);letter-spacing:.08em;color:var(--steel);text-align:right}
 .fine{font-size:13px;color:var(--steel);margin-top:12px}
 
+/* job photos strip */
+.jobs{padding:0 0 56px}
+.jobs h2{font:800 clamp(28px,4vw,40px) var(--disp);text-transform:uppercase;letter-spacing:.01em}
+.jobs .sub{color:var(--steel);margin:8px 0 22px}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.shot{aspect-ratio:4/3;border:2px dashed var(--steel);border-radius:8px;background:
+  repeating-linear-gradient(-45deg,#EDEEEF,#EDEEEF 14px,#F5F6F6 14px,#F5F6F6 28px);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
+.shot span{font:700 13px var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--steel);max-width:18ch}
+@media(max-width:700px){.shots{grid-template-columns:1fr}}
+
 /* reviews */
 .revs{background:var(--ink);color:#fff;padding:56px 0}
 .revs .big{display:flex;align-items:baseline;gap:14px;margin:18px 0 22px;flex-wrap:wrap}
@@ -129,6 +140,18 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
       <div class="job"><div><div class="t">The half-day list</div><div class="d">Bundle the small stuff — best value per job on the board.</div></div><div class="p">$290<small>UP TO 4 HRS</small></div></div>
     </div>
     <p class="fine">Draft note for M&amp;M: these rows and rates are placeholders — we'll set your real jobs and prices in one pass. Anything on the board can go.</p>
+  </div>
+</section>
+
+<section class="jobs">
+  <div class="wrap">
+    <h2>Recent jobs</h2>
+    <p class="sub">Draft note for M&amp;M: your before/after shots go here — the ones already on your Google page work perfectly. Three photos is all this needs.</p>
+    <div class="shots">
+      <div class="shot"><span>Before / after — your best transformation</span></div>
+      <div class="shot"><span>You or the truck on a job site</span></div>
+      <div class="shot"><span>Finished work you're proud of</span></div>
+    </div>
   </div>
 </section>
 
