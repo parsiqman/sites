@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucy Cleaning Service — house cleaning, Rockland & the South Shore</title>
+<meta name="description" content="Recurring, deep, and move-out cleans for Rockland, Weymouth & the South Shore. 5.0 stars on Google. Get a quote by text in minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#23443C; --fresh:#3E8E7E; --mist:#F0F5F3; --white:#FFFFFF;
+  --inkline:#D8E4E0; --mute:#5C6E69;
+  --disp:"DM Serif Display",serif; --body:"Karla",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{font:16.5px/1.65 var(--body);color:var(--pine);background:var(--white)}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--fresh);outline-offset:3px}
+.btn{display:inline-block;font:700 15px var(--body);background:var(--pine);color:var(--white);
+  padding:14px 30px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:var(--fresh)}
+.btn.soft{background:var(--mist);color:var(--pine)}
+.badge{position:fixed;bottom:14px;right:14px;z-index:9;background:var(--pine);color:#fff;
+  font:700 11px var(--body);letter-spacing:.05em;padding:8px 12px;border-radius:999px;text-decoration:none;opacity:.92}
+
+/* centered, airy — the opposite architecture of the handyman board */
+header{padding:22px 0;text-align:center}
+.logo{font:400 24px var(--disp);letter-spacing:.01em}
+.logo em{font-style:italic;color:var(--fresh)}
+header .sub{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:2px}
+
+.hero{text-align:center;padding:56px 0 46px;background:radial-gradient(70% 90% at 50% 0%, var(--mist) 0%, var(--white) 75%)}
+.hero .stars{color:var(--fresh);letter-spacing:3px;font-size:18px}
+.hero .starsub{font-size:13px;color:var(--mute);margin:6px 0 20px}
+.hero h1{font:400 clamp(34px,5.4vw,54px)/1.12 var(--disp);max-width:19ch;margin:0 auto}
+.hero h1 em{font-style:italic;color:var(--fresh)}
+.hero p{color:var(--mute);max-width:50ch;margin:18px auto 28px}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* the checklist — signature */
+.clean{padding:60px 0}
+.clean h2,.plans h2,.quote h2{font:400 clamp(26px,3.6vw,36px) var(--disp);text-align:center}
+.clean .sub,.plans .sub{color:var(--mute);text-align:center;max-width:52ch;margin:10px auto 34px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--inkline);border-radius:16px;overflow:hidden}
+.col{padding:30px 32px}
+.col + .col{border-left:1px solid var(--inkline)}
+.col h3{font:400 21px var(--disp);margin-bottom:14px}
+.col h3 span{font:700 11px var(--body);letter-spacing:.12em;color:var(--fresh);display:block;text-transform:uppercase;margin-bottom:4px}
+.tick{list-style:none;padding:0}
+.tick li{padding:8px 0 8px 32px;position:relative;border-top:1px dashed var(--inkline);font-size:15px}
+.tick li:first-child{border-top:0}
+.tick li::before{content:"";position:absolute;left:2px;top:13px;width:16px;height:16px;border-radius:50%;
+  background:var(--mist);border:1.5px solid var(--fresh)}
+.tick li::after{content:"";position:absolute;left:6.5px;top:16.5px;width:7px;height:4px;
+  border-left:2px solid var(--fresh);border-bottom:2px solid var(--fresh);transform:rotate(-45deg)}
+
+/* plans */
+.plans{background:var(--mist);padding:60px 0}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tier{background:var(--white);border:1px solid var(--inkline);border-radius:16px;padding:26px 24px;text-align:center}
+.tier.mid{border-color:var(--fresh);box-shadow:0 10px 28px rgba(35,68,60,.10)}
+.tier .k{font:700 11px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--fresh)}
+.tier h3{font:400 24px var(--disp);margin:8px 0 4px}
+.tier .pr{font:700 15px var(--body);color:var(--mute);margin-bottom:12px}
+.tier p{font-size:14px;color:var(--mute)}
+.note{text-align:center;font-size:13px;color:var(--mute);margin-top:18px}
+
+/* reviews strip */
+.social{padding:54px 0;text-align:center}
+.social .num{font:400 54px var(--disp)}
+.social .num em{font-style:italic;color:var(--fresh)}
+.social p{color:var(--mute);max-width:46ch;margin:8px auto 0;font-size:15px}
+.social a{color:var(--pine)}
+
+/* quote */
+.quote{padding:56px 0 66px}
+.quote .card{max-width:560px;margin:26px auto 0;background:var(--white);border:1px solid var(--inkline);
+  border-radius:16px;padding:30px}
+.quote label{display:block;font:700 13.5px var(--body);margin:12px 0 5px}
+.quote input,.quote select{width:100%;padding:12px 14px;font:15px var(--body);border:1px solid var(--inkline);
+  border-radius:10px;background:var(--mist)}
+.quote .btn{margin-top:20px;width:100%}
+.ok{display:none;background:var(--mist);border:1px solid var(--fresh);border-radius:12px;padding:14px;margin-top:14px;font-size:14px}
+footer{border-top:1px solid var(--inkline);padding:24px 0 32px;text-align:center;font-size:12.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+@media(max-width:760px){.cols,.tiers{grid-template-columns:1fr}.col + .col{border-left:0;border-top:1px solid var(--inkline)}}
+</style>
+</head>
+<body>
+<a class="badge" href="../portfolio/">DRAFT · SOUTH SHORE SITES</a>
+
+<header>
+  <div class="logo">Lucy <em>Cleaning</em> Service</div>
+  <div class="sub">Rockland · Weymouth · the South Shore</div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="stars" aria-label="5 stars">★★★★★</div>
+    <div class="starsub">5.0 on Google · 28 reviews</div>
+    <h1>Come home to a house that <em>exhales.</em></h1>
+    <p>Recurring, deep, and move-out cleans by a small local team that treats your home like the reviews say we do. Quotes by text, usually within the hour.</p>
+    <div class="cta">
+      <a class="btn" href="#quote">Get a quote by text</a>
+      <a class="btn soft" href="tel:+17819011633">Call (781) 901-1633</a>
+    </div>
+  </div>
+</section>
+
+<section class="clean">
+  <div class="wrap">
+    <h2>Every clean, checked off</h2>
+    <p class="sub">The same list, every visit — so nothing depends on memory, and you know exactly what "done" means before we start.</p>
+    <div class="cols">
+      <div class="col">
+        <h3><span>Every visit</span>Kitchen &amp; baths</h3>
+        <ul class="tick">
+          <li>Counters, sinks &amp; fixtures shined</li>
+          <li>Stovetop, microwave &amp; appliance fronts</li>
+          <li>Toilets, tubs &amp; showers scrubbed</li>
+          <li>Mirrors &amp; glass streak-free</li>
+          <li>Floors vacuumed and mopped</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3><span>Every visit</span>Living &amp; bedrooms</h3>
+        <ul class="tick">
+          <li>Dusting — surfaces, sills &amp; baseboards</li>
+          <li>Beds made, linens changed on request</li>
+          <li>Carpets vacuumed, hard floors mopped</li>
+          <li>Trash out, bags replaced</li>
+          <li>Light switches &amp; handles wiped</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plans">
+  <div class="wrap">
+    <h2>Three ways to book us</h2>
+    <p class="sub">Draft note for Lucy: these tiers and rates are placeholders — we'll set your real offerings and prices together.</p>
+    <div class="tiers">
+      <div class="tier"><div class="k">Weekly / biweekly</div><h3>The Standing Clean</h3><div class="pr">from $130 / visit</div><p>Your regular reset — same team, same day, the checklist every time.</p></div>
+      <div class="tier mid"><div class="k">Most requested</div><h3>The Deep Clean</h3><div class="pr">from $260</div><p>Inside appliances, baseboards, vents, the corners a regular clean skips.</p></div>
+      <div class="tier"><div class="k">Moving day</div><h3>Move-In / Move-Out</h3><div class="pr">from $320</div><p>Empty-home top to bottom — landlord-inspection ready.</p></div>
+    </div>
+    <p class="note">Fully insured · supplies included · easy rescheduling by text</p>
+  </div>
+</section>
+
+<section class="social">
+  <div class="wrap">
+    <div class="num">5.0 <em>stars</em></div>
+    <p>across <a href="https://www.google.com/maps/search/Lucy+cleaning+service+Rockland+MA" rel="noopener">28 Google reviews</a>. On the live site, your two favorites sit right here — real names, pulled straight from your Google page. You choose them.</p>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap">
+    <h2>Get your quote</h2>
+    <div class="card">
+      <form id="qf">
+        <label for="n">Name</label><input id="n" required autocomplete="name">
+        <label for="t">Town</label><input id="t" required placeholder="Rockland, Weymouth…">
+        <label for="s">What kind of clean?</label>
+        <select id="s"><option>Weekly / biweekly</option><option>Deep clean</option><option>Move-in / move-out</option><option>One-time</option></select>
+        <label for="p">Phone (quote comes by text)</label><input id="p" type="tel" required autocomplete="tel">
+        <button class="btn" type="submit">Text me a quote</button>
+        <div class="ok" id="ok">This is a draft site, so nothing was sent — live, this arrives in Lucy's texts with your details ready to quote.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>Lucy Cleaning Service · (781) 901-1633 · Rockland, MA</footer>
+
+<script>
+document.getElementById("qf").addEventListener("submit",function(e){
+  e.preventDefault(); document.getElementById("ok").style.display="block";
+});
+</script>
+</body>
+</html>
