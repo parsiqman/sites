@@ -1,4 +1,6 @@
-# Outreach Kit
+# Outreach Kit — Built First
+
+Site: https://builtfirstsites.com · Email: builtfirstsites@gmail.com · Text: (401) 834-1058
 
 Your entire job is in this file. Everything else is mine.
 
@@ -22,7 +24,7 @@ then you lead with Message B).
 > [BUSINESS NAME], there was no website linked on your Google listing — so people
 > finding you on Maps can't see your services or request a quote. I'll build you a full draft for free — you only pay ($300 flat,
 > no monthly fees) if you want it live. Want me to put one together? Takes me two
-> days. Sample of my work: [PORTFOLIO LINK]
+> days. Sample of my work: https://builtfirstsites.com
 
 ## Message B — demo already built (the strong version)
 

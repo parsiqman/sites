@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>South Shore Sites — one-page websites for local businesses, $300 flat</title>
-<meta name="description" content="Modern one-page websites for Quincy & South Shore service businesses. Built first — you pay only if you want it. $300 flat, no monthly fees.">
+<title>Built First — one-page websites for South Shore businesses, $300 flat</title>
+<meta name="description" content="Modern one-page websites for South Shore service businesses. I build it first — you pay only if you want it. $300 flat, no monthly fees.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -32,7 +32,8 @@ header{padding:20px 0;border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;gap:14px}
 .mark{width:34px;height:34px;background:var(--navy);border-radius:7px;position:relative;flex:none}
 .mark::after{content:"";position:absolute;inset:auto 6px 7px 6px;height:5px;background:var(--yellow);border-radius:2px}
-.logo{font:800 18px var(--display);letter-spacing:-.01em}
+.logo{font:800 19px var(--display);letter-spacing:-.015em;line-height:1.05}
+.logo small{display:block;font:500 9.5px var(--mono);letter-spacing:.13em;color:var(--slate);margin-top:3px}
 header nav{margin-left:auto;display:flex;gap:22px;font-weight:500;font-size:15px}
 header nav a{text-decoration:none;color:var(--slate)}
 header nav a:hover{color:var(--navy)}
@@ -74,7 +75,10 @@ header nav a:hover{color:var(--navy)}
 .shot .s{font-size:13px}
 .shot.landscape{background:linear-gradient(160deg,#223528 0%,#2C4A33 70%);color:#FBFBF7}
 .shot.landscape .s{color:#C9D6C4}
-.shot.coming{background:repeating-linear-gradient(-45deg,var(--fog),var(--fog) 12px,#ECEDE6 12px,#ECEDE6 24px);color:var(--slate)}
+.shot.handy{background:linear-gradient(160deg,#1E2124 0%,#33393F 70%);color:#F2F3F4}
+.shot.handy .s{color:#AEB6BD}
+.shot.clean{background:linear-gradient(160deg,#23443C 0%,#3E8E7E 85%);color:#F0F5F3}
+.shot.clean .s{color:#CFE2DC}
 .cap{padding:14px 16px;font-size:14px;color:var(--slate);display:flex;justify-content:space-between;align-items:center}
 .cap b{color:var(--navy);font-weight:600}
 .tag{font:500 11px var(--mono);background:var(--fog);border:1px solid var(--line);border-radius:5px;padding:3px 8px}
@@ -103,7 +107,7 @@ footer{padding:26px 0;font:500 12px var(--mono);color:var(--slate);display:flex;
 <header>
   <div class="wrap">
     <div class="mark" aria-hidden="true"></div>
-    <div class="logo">South Shore Sites</div>
+    <div class="logo">Built First<small>WEBSITES FOR SOUTH SHORE BUSINESSES</small></div>
     <nav>
       <a href="#work">Work</a>
       <a href="#deal">Pricing</a>
@@ -146,16 +150,21 @@ footer{padding:26px 0;font:500 12px var(--mono);color:var(--slate);display:flex;
     <h2>Sample work</h2>
     <p class="sub">Every site is built one at a time, around what the business actually does — not dropped into a template. Click through and poke around; they work on a phone, because that's where your customers are.</p>
     <div class="sheet">
-      <a class="frame" href="../demo-landscape/">
+      <a class="frame" href="/demo-landscape/">
         <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">granitecoastlandscape.com</span></div>
         <div class="shot landscape"><span class="t">Granite Coast Landscape</span><span class="s">Sharp lawns. Square edges. Quincy, MA.</span></div>
         <div class="cap"><b>Landscaping · one-pager</b><span class="tag">SAMPLE</span></div>
       </a>
-      <div class="frame" aria-hidden="true">
-        <div class="chrome"><i></i><i></i><i></i><span class="url">your-business-here.com</span></div>
-        <div class="shot coming"><span class="t" style="font-size:18px">Your site could be next</span><span class="s">Barbershops, cleaners, contractors, gyms…</span></div>
-        <div class="cap"><b>In progress</b><span class="tag">NEXT</span></div>
-      </div>
+      <a class="frame" href="/demo-mm-handyman/">
+        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">mmhandymanquincy.com</span></div>
+        <div class="shot handy"><span class="t">M&amp;M Handyman</span><span class="s">The list on your fridge? Done by Friday.</span></div>
+        <div class="cap"><b>Handyman · rate board</b><span class="tag">DRAFT</span></div>
+      </a>
+      <a class="frame" href="/demo-lucy-cleaning/">
+        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">lucycleaningservice.com</span></div>
+        <div class="shot clean"><span class="t">Lucy Cleaning</span><span class="s">Come home to a house that exhales.</span></div>
+        <div class="cap"><b>House cleaning · checklist</b><span class="tag">DRAFT</span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -183,13 +192,14 @@ footer{padding:26px 0;font:500 12px var(--mono);color:var(--slate);display:flex;
 <section class="contact" id="contact">
   <div class="wrap">
     <h2>Have a business? Want a draft?</h2>
-    <p>Send your business name and town. You'll get a link to your draft site — free, no obligation, usually within two days.</p>
-    <a class="btn" href="mailto:HELLO@EXAMPLE.COM?subject=Website%20draft%20for%20my%20business">Email me your business name</a>
+    <p>Send your business name and town. You&rsquo;ll get a link to your draft site &mdash; free, no obligation, usually within two days.</p>
+    <a class="btn" href="mailto:builtfirstsites@gmail.com?subject=Website%20draft%20for%20my%20business">Email builtfirstsites@gmail.com</a>
+      <p style="margin-top:18px;font:500 13px var(--mono);color:#B9C2CF">or call / text (401) 834-1058</p>
   </div>
 </section>
 
 <footer class="wrap">
-  <span>SOUTH SHORE SITES · QUINCY, MA</span>
+  <span>BUILT FIRST · QUINCY, MA · (401) 834-1058</span>
   <span>BUILT ONE AT A TIME</span>
 </footer>
 </body>
