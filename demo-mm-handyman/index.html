@@ -84,6 +84,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-off
 .slot{border:2px dashed #4A5560;border-radius:10px;padding:20px;color:#AEB6BD;font-size:14.5px}
 .slot b{display:block;color:#fff;font:700 15px var(--disp);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
 
+/* taped note */
+.note-tape{background:#FFF6C9;border:1px solid #E8DFA8;border-radius:4px;padding:16px 18px;
+  transform:rotate(-1.2deg);margin-top:18px;font-size:14px;color:#5B5330;box-shadow:0 3px 8px rgba(0,0,0,.08);position:relative}
+.note-tape::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(2deg);
+  width:74px;height:18px;background:rgba(200,200,200,.45);border-radius:2px}
+.note-tape b{font:700 14px var(--disp);letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:4px;color:#3F3A1E}
+
 /* booking */
 .book{padding:56px 0 64px}
 .book .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px;margin-top:22px;
@@ -118,7 +125,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
   <div class="wrap">
     <span class="kicker">Same-week slots · Quincy, MA</span>
     <h1>The list on your fridge? <b>Done by Friday.</b></h1>
-    <p>Appliance repairs, mounting, drywall, fixtures, assembly — the jobs that wait for months get handled in one visit. One call, straight pricing, cleaned up before we leave.</p>
+    <p>The dryer that quit heating. The door that won't latch. The TV that's been on the floor since March. Text a photo, get a straight price, and it's handled in one visit — swept up before we leave.</p>
     <div class="row">
       <a class="btn" href="#book">Book a visit</a>
       <a class="btn dark" href="tel:+19789418498">Call now</a>
@@ -130,7 +137,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
 <section class="board" id="rates">
   <div class="wrap">
     <h2>The rate board</h2>
-    <p class="sub">No mystery pricing. Most common jobs, straight rates — everything else quoted from a photo you text over.</p>
+    <p class="sub">Posted like a shop should. If it's not on the board, text a photo and you'll get a number back — usually same day, no "someone will reach out."</p>
     <div class="sheet">
       <div class="head"><span>Job</span><span>Rate</span></div>
       <div class="job"><div><div class="t">Appliance repair — diagnose &amp; fix</div><div class="d">Washers, dryers, dishwashers, ranges. Diagnostic applied to the repair.</div></div><div class="p">$95<small>DIAGNOSTIC</small></div></div>
@@ -188,6 +195,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
         <div class="line" style="margin-top:16px"><span>Serving</span><b>QUINCY + SOUTH SHORE</b></div>
         <div class="line"><span>Hours</span><b>MON–SAT</b></div>
         <div class="line"><span>Payment</span><b>CARD · CHECK · CASH</b></div>
+        <div class="note-tape"><b>Fastest way to a price</b>Skip the form if you want — text a photo of the job straight to (978) 941-8498. A picture beats a paragraph.</div>
       </div>
     </div>
   </div>
