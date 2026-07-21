@@ -75,10 +75,7 @@ header nav a:hover{color:var(--navy)}
 .shot .s{font-size:13px}
 .shot.landscape{background:linear-gradient(160deg,#223528 0%,#2C4A33 70%);color:#FBFBF7}
 .shot.landscape .s{color:#C9D6C4}
-.shot.handy{background:linear-gradient(160deg,#1E2124 0%,#33393F 70%);color:#F2F3F4}
-.shot.handy .s{color:#AEB6BD}
-.shot.clean{background:linear-gradient(160deg,#23443C 0%,#3E8E7E 85%);color:#F0F5F3}
-.shot.clean .s{color:#CFE2DC}
+.shot.coming{background:repeating-linear-gradient(-45deg,var(--fog),var(--fog) 12px,#ECEDE6 12px,#ECEDE6 24px);color:var(--slate)}
 .cap{padding:14px 16px;font-size:14px;color:var(--slate);display:flex;justify-content:space-between;align-items:center}
 .cap b{color:var(--navy);font-weight:600}
 .tag{font:500 11px var(--mono);background:var(--fog);border:1px solid var(--line);border-radius:5px;padding:3px 8px}
@@ -155,16 +152,11 @@ footer{padding:26px 0;font:500 12px var(--mono);color:var(--slate);display:flex;
         <div class="shot landscape"><span class="t">Granite Coast Landscape</span><span class="s">Sharp lawns. Square edges. Quincy, MA.</span></div>
         <div class="cap"><b>Landscaping · one-pager</b><span class="tag">SAMPLE</span></div>
       </a>
-      <a class="frame" href="/demo-mm-handyman/">
-        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">mmhandymanquincy.com</span></div>
-        <div class="shot handy"><span class="t">M&amp;M Handyman</span><span class="s">The list on your fridge? Done by Friday.</span></div>
-        <div class="cap"><b>Handyman · rate board</b><span class="tag">DRAFT</span></div>
-      </a>
-      <a class="frame" href="/demo-lucy-cleaning/">
-        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span class="url">lucycleaningservice.com</span></div>
-        <div class="shot clean"><span class="t">Lucy Cleaning</span><span class="s">Come home to a house that exhales.</span></div>
-        <div class="cap"><b>House cleaning · checklist</b><span class="tag">DRAFT</span></div>
-      </a>
+      <div class="frame" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">your-business-here.com</span></div>
+        <div class="shot coming"><span class="t" style="font-size:18px">Your site could be next</span><span class="s">Handymen, cleaners, contractors, groomers…</span></div>
+        <div class="cap"><b>Yours, on request</b><span class="tag">FREE DRAFT</span></div>
+      </div>
     </div>
   </div>
 </section>
