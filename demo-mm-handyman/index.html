@@ -55,7 +55,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-off
 .sheet{background:var(--card);border:2px solid var(--ink);border-radius:10px;overflow:hidden}
 .sheet .head{display:grid;grid-template-columns:1fr auto;background:var(--ink);color:#fff;
   font:700 13px var(--disp);letter-spacing:.12em;text-transform:uppercase;padding:12px 20px}
-.job{display:grid;grid-template-columns:1fr auto;gap:16px;padding:16px 20px;border-top:1px solid var(--line);align-items:baseline}
+.job{display:grid;grid-template-columns:auto 1fr auto;gap:16px;padding:16px 20px;border-top:1px solid var(--line);align-items:baseline}
 .job:nth-child(even){background:#FAFAFB}
 .job .t{font:700 19px var(--disp);text-transform:uppercase;letter-spacing:.02em}
 .job .d{color:var(--steel);font-size:14px;margin-top:2px}
@@ -73,6 +73,8 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-off
   display:flex;align-items:center;justify-content:center;text-align:center;padding:16px}
 .shot span{font:700 13px var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--steel);max-width:18ch}
 @media(max-width:700px){.shots{grid-template-columns:1fr}}
+
+.ic{width:26px;height:26px;fill:none;stroke:var(--orange);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
 
 /* reviews */
 .revs{background:var(--ink);color:#fff;padding:56px 0}
@@ -123,9 +125,9 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
 
 <section class="hero">
   <div class="wrap">
-    <span class="kicker">Same-week slots · Quincy, MA</span>
-    <h1>The list on your fridge? <b>Done by Friday.</b></h1>
-    <p>The dryer that quit heating. The door that won't latch. The TV that's been on the floor since March. Text a photo, get a straight price, and it's handled in one visit — swept up before we leave.</p>
+    <span class="kicker">Quincy, MA · usually bookable within the week</span>
+    <h1>For the jobs that have been <b>waiting.</b></h1>
+    <p>The dryer that quit heating. The door that won't latch. The TV that's still on the floor. Send a photo, get a price, pick a time — most jobs are done in one visit.</p>
     <div class="row">
       <a class="btn" href="#book">Book a visit</a>
       <a class="btn dark" href="tel:+19789418498">Call now</a>
@@ -136,16 +138,16 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
 
 <section class="board" id="rates">
   <div class="wrap">
-    <h2>The rate board</h2>
-    <p class="sub">Posted like a shop should. If it's not on the board, text a photo and you'll get a number back — usually same day, no "someone will reach out."</p>
+    <h2>Jobs &amp; rates</h2>
+    <p class="sub">Common jobs and what they cost. Anything not listed — text a photo and you'll get a number back, usually the same day.</p>
     <div class="sheet">
       <div class="head"><span>Job</span><span>Rate</span></div>
-      <div class="job"><div><div class="t">Appliance repair — diagnose &amp; fix</div><div class="d">Washers, dryers, dishwashers, ranges. Diagnostic applied to the repair.</div></div><div class="p">$95<small>DIAGNOSTIC</small></div></div>
-      <div class="job"><div><div class="t">TV / shelf mounting</div><div class="d">Any wall, wires hidden where possible, level guaranteed.</div></div><div class="p">FROM $85<small>PER MOUNT</small></div></div>
-      <div class="job"><div><div class="t">Drywall patch &amp; paint</div><div class="d">Holes, cracks, water stains — blended so you can't find them after.</div></div><div class="p">FROM $120<small>PER PATCH</small></div></div>
-      <div class="job"><div><div class="t">Faucets, disposals &amp; fixtures</div><div class="d">Supplied or yours — installed, sealed, tested.</div></div><div class="p">FROM $110<small>INSTALLED</small></div></div>
-      <div class="job"><div><div class="t">Furniture &amp; equipment assembly</div><div class="d">Flat-pack to gym racks. Hardware sorted, boxes broken down.</div></div><div class="p">$75/HR<small>1-HR MINIMUM</small></div></div>
-      <div class="job"><div><div class="t">The half-day list</div><div class="d">Bundle the small stuff — best value per job on the board.</div></div><div class="p">$290<small>UP TO 4 HRS</small></div></div>
+      <div class="job"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6h3"/></svg><div><div class="t">Appliance repair — diagnose &amp; fix</div><div class="d">Washers, dryers, dishwashers, ranges. Diagnostic applied to the repair.</div></div><div class="p">$95<small>DIAGNOSTIC</small></div></div>
+      <div class="job"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="11" rx="1.5"/><path d="M9 20h6M12 16v4"/></svg><div><div class="t">TV / shelf mounting</div><div class="d">Any wall, wires hidden where possible, level guaranteed.</div></div><div class="p">FROM $85<small>PER MOUNT</small></div></div>
+      <div class="job"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16l9-9 4 4-9 9H4z"/><path d="M14 6l2-2 4 4-2 2"/></svg><div><div class="t">Drywall patch &amp; paint</div><div class="d">Holes, cracks, water stains — blended so you can't find them after.</div></div><div class="p">FROM $120<small>PER PATCH</small></div></div>
+      <div class="job"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 12h10M12 12v6M12 6v2M8 6h8"/><path d="M12 21c0-1.5 1.5-2.5 1.5-2.5"/></svg><div><div class="t">Faucets, disposals &amp; fixtures</div><div class="d">Supplied or yours — installed, sealed, tested.</div></div><div class="p">FROM $110<small>INSTALLED</small></div></div>
+      <div class="job"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19l7-14 7 14"/><path d="M8.5 13h7"/></svg><div><div class="t">Furniture &amp; equipment assembly</div><div class="d">Flat-pack to gym racks. Hardware sorted, boxes broken down.</div></div><div class="p">$75/HR<small>1-HR MINIMUM</small></div></div>
+      <div class="job"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v17H6z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg><div><div class="t">The half-day list</div><div class="d">Bundle the small stuff — best value per job on the board.</div></div><div class="p">$290<small>UP TO 4 HRS</small></div></div>
     </div>
     <p class="fine">Draft note for M&amp;M: these rows and rates are placeholders — we'll set your real jobs and prices in one pass. Anything on the board can go.</p>
   </div>
@@ -153,7 +155,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
 
 <section class="jobs">
   <div class="wrap">
-    <h2>Recent jobs</h2>
+    <h2>Some recent work</h2>
     <p class="sub">Draft note for M&amp;M: your before/after shots go here — the ones already on your Google page work perfectly. Three photos is all this needs.</p>
     <div class="shots">
       <div class="shot"><span>Before / after — your best transformation</span></div>
@@ -165,10 +167,10 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
 
 <section class="revs">
   <div class="wrap">
-    <h2>The number that books us</h2>
+    <h2>4.9 stars on Google</h2>
     <div class="big">
       <span class="num">4.9★</span>
-      <span class="of">across <a href="https://www.google.com/maps/search/M%26M+Handyman+%26+Appliance+Quincy" rel="noopener">58 Google reviews</a> — earned one job at a time around Quincy.</span>
+      <span class="of">across <a href="https://www.google.com/maps/search/M%26M+Handyman+%26+Appliance+Quincy" rel="noopener">58 Google reviews</a> from jobs around Quincy and the South Shore.</span>
     </div>
     <div class="revgrid">
       <div class="slot"><b>Your best review, featured</b>We'll pull your favorite two straight from Google — you pick which ones greet every visitor.</div>
@@ -186,7 +188,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
         <label for="p">Phone</label><input id="p" type="tel" required autocomplete="tel">
         <label for="j">What needs doing?</label>
         <textarea id="j" rows="3" placeholder="Dryer stopped heating / TV mount over fireplace / list of small stuff…"></textarea>
-        <button class="btn" type="submit">Send it — we'll text you a slot</button>
+        <button class="btn" type="submit">Send — we'll text you back with a time</button>
         <div class="ok" id="ok">This is a draft site, so nothing was sent — on the live version this lands straight in M&amp;M's texts with your job description attached.</div>
       </form>
       <div class="side">
@@ -195,7 +197,7 @@ footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(
         <div class="line" style="margin-top:16px"><span>Serving</span><b>QUINCY + SOUTH SHORE</b></div>
         <div class="line"><span>Hours</span><b>MON–SAT</b></div>
         <div class="line"><span>Payment</span><b>CARD · CHECK · CASH</b></div>
-        <div class="note-tape"><b>Fastest way to a price</b>Skip the form if you want — text a photo of the job straight to (978) 941-8498. A picture beats a paragraph.</div>
+        <div class="note-tape"><b>Quickest way to a price</b>Text a photo of the job to (978) 941-8498 — easier than describing it.</div>
       </div>
     </div>
   </div>
