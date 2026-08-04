@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Don's Sealcoating — driveway sealcoating &amp; repair, Braintree &amp; the South Shore</title>
+<meta name="description" content="Driveway sealcoating, crack filling, and patching in Braintree, Quincy and the South Shore. 5.0 stars on Google. Free estimates by text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tar:#20222A; --asphalt:#33363F; --paper:#F5F4F1; --card:#FFFFFF;
+  --amber:#D9A21B; --line:#DEDCD6; --mute:#61646E;
+  --disp:"Oswald",sans-serif; --body:"Source Sans 3",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{font:16.5px/1.6 var(--body);color:var(--tar);background:var(--paper)}
+.wrap{max-width:940px;margin:0 auto;padding:0 22px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.btn{display:inline-block;font:600 16px var(--disp);letter-spacing:.06em;text-transform:uppercase;
+  background:var(--amber);color:var(--tar);padding:14px 28px;border-radius:4px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.06)}
+.btn.line{background:transparent;color:var(--paper);border:2px solid rgba(245,244,241,.45)}
+.badge{position:fixed;bottom:14px;right:14px;z-index:9;background:var(--tar);color:#fff;
+  font:600 11px var(--body);letter-spacing:.05em;padding:8px 12px;border-radius:5px;text-decoration:none;opacity:.92}
+
+header{background:var(--tar);color:var(--paper)}
+header .wrap{display:flex;align-items:center;gap:14px;padding:15px 22px}
+.brand{font:700 21px var(--disp);letter-spacing:.06em;text-transform:uppercase}
+.brand span{color:var(--amber)}
+.brand small{display:block;font:500 10.5px var(--body);letter-spacing:.14em;color:#9A9DA6;margin-top:1px}
+header .ph{margin-left:auto;text-align:right}
+header .ph a{font:700 21px var(--disp);color:var(--paper);text-decoration:none;letter-spacing:.03em}
+header .ph small{display:block;font:600 10px var(--body);letter-spacing:.12em;color:var(--amber)}
+
+/* hero with painted asphalt band */
+.hero{background:var(--asphalt);color:var(--paper);padding:64px 0 58px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;
+  background:repeating-linear-gradient(90deg,var(--amber) 0 46px,transparent 46px 92px);opacity:.85}
+.hero h1{font:700 clamp(34px,5.6vw,54px)/1.06 var(--disp);text-transform:uppercase;letter-spacing:.01em;max-width:17ch}
+.hero p{margin:16px 0 26px;color:#C7C9D0;max-width:50ch;font-size:17px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.rate{display:inline-flex;gap:8px;align-items:center;background:rgba(245,244,241,.08);border:1px solid rgba(245,244,241,.18);
+  border-radius:4px;padding:9px 14px;font-size:14.5px}
+.rate b{color:var(--amber)}
+
+/* what we do */
+.work{padding:56px 0}
+.work h2,.when h2,.est h2{font:700 clamp(26px,3.6vw,34px) var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.work .sub,.when .sub{color:var(--mute);margin:8px 0 26px;max-width:56ch}
+.rows{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.row2{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:baseline;padding:18px 20px;border-top:1px solid var(--line)}
+.row2:first-child{border-top:0}
+.row2:nth-child(even){background:#FAFAF8}
+.row2 .n{font:700 15px var(--disp);color:var(--amber);letter-spacing:.06em}
+.row2 h3{font:600 19px var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.row2 p{color:var(--mute);font-size:14.5px;margin-top:3px}
+.row2 .pr{font:700 17px var(--disp);white-space:nowrap}
+.row2 .pr small{display:block;font:500 10px var(--body);letter-spacing:.08em;color:var(--mute);text-align:right}
+.fine{font-size:13px;color:var(--mute);margin-top:12px}
+
+/* season timing — sealcoating is weather-bound, that's the real story */
+.when{background:var(--tar);color:var(--paper);padding:54px 0}
+.when .sub{color:#9A9DA6}
+.months{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.mo{border:1px solid rgba(245,244,241,.16);border-radius:6px;padding:16px 14px}
+.mo.good{border-color:var(--amber);background:rgba(217,162,27,.10)}
+.mo b{font:600 14px var(--disp);letter-spacing:.1em;text-transform:uppercase;display:block}
+.mo span{font-size:13px;color:#9A9DA6}
+.mo.good span{color:#E8D9AE}
+
+/* proof */
+.proof{padding:54px 0 10px;text-align:center}
+.proof .big{font:700 46px var(--disp);color:var(--amber)}
+.proof p{color:var(--mute);max-width:44ch;margin:6px auto 0}
+.proof a{color:var(--tar)}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.shotbox{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:6px;display:flex;align-items:center;
+  justify-content:center;padding:14px;text-align:center;background:var(--card)}
+.shotbox span{font:600 12px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);max-width:20ch}
+
+/* estimate */
+.est{padding:50px 0 60px}
+.est .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:26px;margin-top:20px;
+  display:grid;grid-template-columns:1.15fr 1fr;gap:28px}
+.est label{display:block;font:600 13.5px var(--body);margin:12px 0 5px}
+.est input,.est select{width:100%;padding:11px 13px;font:15px var(--body);border:1px solid var(--line);border-radius:5px;background:var(--paper)}
+.est .btn{margin-top:18px;width:100%}
+.ok{display:none;background:#FBF3DC;border:1px solid var(--amber);border-radius:6px;padding:14px;margin-top:14px;font-size:14px}
+.side h3{font:600 18px var(--disp);text-transform:uppercase}
+.side p{color:var(--mute);font-size:14.5px;margin-top:6px}
+.side .l{display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding:9px 0;font-size:14px}
+footer{border-top:1px solid var(--line);padding:22px 0 30px;font:600 11.5px var(--body);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--mute);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media(max-width:800px){.months{grid-template-columns:1fr 1fr}.est .card{grid-template-columns:1fr}.shots{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="badge" href="/">DRAFT · BUILT FIRST</a>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Don's <span>Sealcoating</span><small>BRAINTREE · QUINCY · SOUTH SHORE</small></div>
+    <div class="ph"><a href="tel:+16179819994">(617) 981-9994</a><small>CALL OR TEXT</small></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Driveway sealcoating and repair on the South Shore</h1>
+    <p>Sealcoating, crack filling, and patching for homes and small lots around Braintree and Quincy. Send a photo of the driveway and you'll get an estimate back — no visit needed for most jobs.</p>
+    <div class="row">
+      <a class="btn" href="#estimate">Get an estimate</a>
+      <a class="btn line" href="tel:+16179819994">Call (617) 981-9994</a>
+      <span class="rate"><b>5.0★</b> · 10 Google reviews</span>
+    </div>
+  </div>
+</section>
+
+<section class="work">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <p class="sub">Most residential driveways are a one-day job. Prices below are typical ranges — the real number depends on square footage and condition.</p>
+    <div class="rows">
+      <div class="row2"><span class="n">01</span><div><h3>Sealcoating</h3><p>Cleaned, edged, cracks handled, then two coats of commercial-grade sealer.</p></div><div class="pr">$0.18–0.25<small>PER SQ FT</small></div></div>
+      <div class="row2"><span class="n">02</span><div><h3>Crack filling</h3><p>Hot rubberized filler that flexes through a New England winter instead of splitting.</p></div><div class="pr">FROM $150<small>TYPICAL DRIVE</small></div></div>
+      <div class="row2"><span class="n">03</span><div><h3>Patching &amp; pothole repair</h3><p>Failed sections cut out and replaced, compacted flush with the surface.</p></div><div class="pr">QUOTED<small>BY THE AREA</small></div></div>
+      <div class="row2"><span class="n">04</span><div><h3>Line striping — small lots</h3><p>Churches, offices, and small commercial lots. Layout and re-striping.</p></div><div class="pr">QUOTED<small>BY THE LOT</small></div></div>
+    </div>
+    <p class="fine">Draft note for Don: these services and price ranges are placeholders — send me your real list and numbers and I'll set them properly.</p>
+  </div>
+</section>
+
+<section class="when">
+  <div class="wrap">
+    <h2>Timing matters here</h2>
+    <p class="sub">Sealer needs warm, dry pavement to cure. That's the whole reason this work has a season in Massachusetts.</p>
+    <div class="months">
+      <div class="mo"><b>Apr – May</b><span>Cool and wet. Crack filling and patching only.</span></div>
+      <div class="mo good"><b>Jun – Aug</b><span>Best window. Sealer cures fast and lasts.</span></div>
+      <div class="mo good"><b>Sep – early Oct</b><span>Still good. Books up before the cold arrives.</span></div>
+      <div class="mo"><b>Late Oct – Mar</b><span>Too cold to seal. Repairs only.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap">
+    <div class="big">5.0 stars</div>
+    <p>across <a href="https://www.google.com/maps/search/Dons+sealcoating+Braintree+MA" rel="noopener">10 Google reviews</a>.</p>
+    <div class="shots">
+      <div class="shotbox"><span>Driveway before</span></div>
+      <div class="shotbox"><span>The same driveway after</span></div>
+      <div class="shotbox"><span>A finished job you're proud of</span></div>
+    </div>
+    <p class="fine" style="max-width:52ch;margin:14px auto 0">Draft note: your own before/after photos go in these three spots — the ones on your Google page work fine.</p>
+  </div>
+</section>
+
+<section class="est" id="estimate">
+  <div class="wrap">
+    <h2>Get an estimate</h2>
+    <div class="card">
+      <form id="ef">
+        <label for="n">Name</label><input id="n" required autocomplete="name">
+        <label for="a">Street &amp; town</label><input id="a" required placeholder="14 Morrison Rd, Braintree" autocomplete="street-address">
+        <label for="s">What do you need?</label>
+        <select id="s"><option>Sealcoating</option><option>Crack filling</option><option>Patching / pothole repair</option><option>Line striping</option><option>Not sure — take a look</option></select>
+        <label for="p">Phone</label><input id="p" type="tel" required autocomplete="tel">
+        <button class="btn" type="submit">Send</button>
+        <div class="ok" id="ok">This is a draft site, so nothing was sent — on the live version this goes straight to Don's phone.</div>
+      </form>
+      <div class="side">
+        <h3>How estimates work</h3>
+        <p>A photo of the driveway from the street is usually enough. Larger or damaged surfaces get a quick look in person.</p>
+        <div class="l" style="margin-top:16px"><span>Serving</span><b>BRAINTREE · QUINCY · SOUTH SHORE</b></div>
+        <div class="l"><span>Season</span><b>JUNE – EARLY OCTOBER</b></div>
+        <div class="l"><span>Payment</span><b>CHECK · CASH · CARD</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>DON'S SEALCOATING · BRAINTREE, MA</span>
+  <span>(617) 981-9994</span>
+</footer>
+<script>
+document.getElementById("ef").addEventListener("submit",function(e){e.preventDefault();document.getElementById("ok").style.display="block";});
+</script>
+</body>
+</html>

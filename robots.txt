@@ -1,4 +1,7 @@
 User-agent: *
 Disallow: /demo-mm-handyman/
 Disallow: /demo-lucy-cleaning/
+Disallow: /demo-dons-sealcoating/
+Disallow: /demo-fence-and-more/
+Disallow: /demo-power-masonry/
 Allow: /
