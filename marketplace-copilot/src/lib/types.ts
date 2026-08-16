@@ -84,6 +84,15 @@ export interface CostSettings {
   lossAllowance: number;
   /** Opportunity cost of cash tied up, per day, as a fraction of the buy price. */
   holdingCostPerDay: number;
+  /**
+   * How fast a "normal" flip turns for you, in days. `targetRoi` is the return
+   * you want on an item that sells this fast; faster items are allowed to clear
+   * a lower return and slower ones are held to a higher one, so that a given
+   * target means the same annual return regardless of how quickly stock moves.
+   */
+  baselineDaysToSell: number;
+  /** Days between paying for an item and having it listed: cleaning, testing, photos. */
+  turnaroundDays: number;
   /** Opening offer as a fraction of your walk-away price. */
   openingOfferFactor: number;
   /** Search the web for current sold prices rather than pricing from memory. */
@@ -103,6 +112,33 @@ export interface FeeProfile {
 
 export type Verdict = "strong" | "workable" | "thin" | "pass";
 
+/** Profit and return at a given buy price. */
+export interface Position {
+  buyPrice: number;
+  profit: number;
+  /** Return on the cash at risk for this one flip. */
+  roi: number;
+  /**
+   * The same return scaled to a year of repeating this flip. This is the number
+   * that makes a fast $40 item and a slow $150 item comparable.
+   */
+  annualizedRoi: number;
+}
+
+/** How quickly the cash comes back, and what that does to the required return. */
+export interface Velocity {
+  /** The model's estimate of days to sell once listed. */
+  daysToSell: number;
+  /** Days to sell plus your turnaround — the full round trip for the cash. */
+  cycleDays: number;
+  /** Cycle length relative to your baseline. Above 1 means slower than normal. */
+  multiplier: number;
+  /** `targetRoi` scaled by the multiplier — what this item actually has to clear. */
+  requiredRoi: number;
+  /** How many times a year this one flip's capital could recycle. */
+  turnsPerYear: number;
+}
+
 /** The computed answer. Every number here comes from `valuation.ts`. */
 export interface DealMath {
   channel: Channel;
@@ -120,14 +156,16 @@ export interface DealMath {
     transport: number;
     total: number;
   };
-  /** Most you can pay and still clear `targetRoi`. The walk-away number. */
+  /** How fast the cash comes back, and the return this item therefore has to clear. */
+  velocity: Velocity;
+  /** Most you can pay and still clear the velocity-adjusted required return. */
   maxOffer: number;
   /** Where to start the negotiation. */
   openingOffer: number;
-  /** Profit and ROI at the current asking price. Null if no price was found. */
-  atAsking: { buyPrice: number; profit: number; roi: number } | null;
-  /** Profit at the walk-away price, by definition ~= targetRoi. */
-  atMaxOffer: { buyPrice: number; profit: number; roi: number };
+  /** Profit and return at the current asking price. Null if no price was found. */
+  atAsking: Position | null;
+  /** Profit at the walk-away price, by definition ~= `velocity.requiredRoi`. */
+  atMaxOffer: Position;
   /** Downside case: sells at the adjusted low comp, bought at asking. */
   downside: { profit: number; roi: number } | null;
   verdict: Verdict;

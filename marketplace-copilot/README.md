@@ -76,6 +76,12 @@ Other things worth knowing:
 - **Confidence feeds the math.** A low-confidence identification shrinks the comp range
   before any profit is computed, so an uncertain appraisal automatically produces a more
   conservative offer instead of a confident-sounding guess.
+- **Speed feeds the math too.** Raw profit makes a $150 item that sits for three months
+  look better than a $40 item that turns in a week. It isn't — the fast one recycles the
+  same cash into eight more flips over that quarter. So each item is held to a return
+  scaled by how long it ties money up: your target ROI is what a *normal-paced* flip must
+  clear, fast movers can clear less, and slow movers have to earn more. Set your normal
+  pace in options.
 - **Photos are downscaled to 1024px** before upload. Condition assessment doesn't need
   full resolution, and full-size Facebook photos cost several times more in image tokens.
 - **The system prompt is cached.** It's byte-identical every call, so repeat appraisals

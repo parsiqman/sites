@@ -239,7 +239,15 @@ export class Panel {
     const offers = el("div", "offers");
     offers.appendChild(offerCard("Open at", money(math.openingOffer), "your first number"));
     offers.appendChild(
-      offerCard("Walk away above", money(math.maxOffer), `${pct(a.appraisal.confidence)} confidence`),
+      offerCard(
+        "Walk away above",
+        money(math.maxOffer),
+        math.velocity.multiplier >= 1.5
+          ? "held down by slow turn"
+          : math.velocity.multiplier <= 0.7
+            ? "lifted by quick turn"
+            : `${pct(a.appraisal.confidence)} confidence`,
+      ),
     );
     body.appendChild(offers);
 
@@ -270,6 +278,13 @@ export class Panel {
         t.appendChild(row("Returns allowance", `−${money(math.feeBreakdown.lossAllowance)}`, true));
         t.appendChild(row("Pickup", `−${money(math.feeBreakdown.transport)}`, true));
         t.appendChild(row("Net before you pay for it", money(math.netProceedsAtMedian - math.feeBreakdown.transport), false, true));
+        t.appendChild(
+          row(
+            "Turns in",
+            `~${math.velocity.daysToSell}d · ${math.velocity.turnsPerYear.toFixed(1)}x a year`,
+            true,
+          ),
+        );
         wrap.appendChild(t);
 
         const basis = el("p", "note");
@@ -287,6 +302,9 @@ export class Panel {
           t.appendChild(row("Buy at", money(math.atAsking!.buyPrice)));
           t.appendChild(signedRow("Profit", math.atAsking!.profit));
           t.appendChild(row("Return on cash", pct(math.atAsking!.roi), true));
+          t.appendChild(
+            row("Annualized", `${pct(math.atAsking!.annualizedRoi)} a year`, true),
+          );
           if (math.downside)
             t.appendChild(signedRow("If it only fetches the low comp", math.downside.profit));
           return t;

@@ -12,6 +12,8 @@ import {
   profitAt,
   roiAt,
   stalenessLeverage,
+  velocityFor,
+  annualize,
 } from "../src/lib/valuation.ts";
 import { parseDaysAgo } from "../src/content/extract.ts";
 import type { Appraisal, CostSettings, Listing } from "../src/lib/types.ts";
@@ -68,19 +70,111 @@ test("local resale takes no platform fee and no shipping", () => {
   assert.ok(local > netProceeds(1000, settings, "ebay"));
 });
 
-test("maxOffer is exactly the price at which the deal hits the target ROI", () => {
+test("maxOffer is exactly the price at which the deal hits the required return", () => {
   const sale = 1000;
   const days = 14;
   const max = maxOfferFor(sale, days, settings, "ebay");
   const profit = profitAt(max, sale, days, settings, "ebay");
   const roi = roiAt(max, profit, settings);
+  const required = velocityFor(days, settings).requiredRoi;
 
-  // This is the load-bearing identity of the whole engine: paying maxOffer
-  // should land on the target return, not near it.
+  // The load-bearing identity of the engine: paying maxOffer lands on the
+  // velocity-adjusted required return, not near it.
   assert.ok(
-    Math.abs(roi - settings.targetRoi) < 0.005,
-    `expected ROI ~${settings.targetRoi}, got ${roi}`,
+    Math.abs(roi - required) < 0.005,
+    `expected ROI ~${required}, got ${roi}`,
   );
+});
+
+test("an item that sells at your baseline pace is held to exactly targetRoi", () => {
+  const v = velocityFor(settings.baselineDaysToSell, settings);
+  assert.equal(v.multiplier, 1);
+  assert.equal(v.requiredRoi, settings.targetRoi);
+});
+
+test("velocity: faster items need a smaller margin, slower ones a bigger margin", () => {
+  const fast = velocityFor(5, settings);
+  const normal = velocityFor(30, settings);
+  const slow = velocityFor(120, settings);
+
+  assert.ok(fast.requiredRoi < normal.requiredRoi);
+  assert.ok(slow.requiredRoi > normal.requiredRoi);
+  assert.ok(fast.turnsPerYear > slow.turnsPerYear);
+});
+
+test("velocity multiplier is clamped at both ends", () => {
+  // A same-day flip still carries a full flip's labour, so it can't demand ~no margin.
+  assert.equal(velocityFor(0, settings).multiplier, 0.4);
+  // And one absurd days-to-sell estimate can't declare every slow item worthless.
+  assert.equal(velocityFor(5000, settings).multiplier, 3);
+});
+
+test("velocity: turnaround time counts against the fast items too", () => {
+  const noTurnaround = velocityFor(7, { ...settings, turnaroundDays: 0 });
+  const withTurnaround = velocityFor(7, { ...settings, turnaroundDays: 10 });
+  assert.ok(withTurnaround.cycleDays > noTurnaround.cycleDays);
+  assert.ok(withTurnaround.requiredRoi > noTurnaround.requiredRoi);
+});
+
+test("at the same profit, the faster flip is worth paying more for", () => {
+  const comps = { low: 180, median: 220, high: 260, channel: "ebay" as const, basis: "" };
+  const quick = computeDeal(
+    listing({ askingPrice: 100 }),
+    appraisal({ comps, estimatedDaysToSell: 5 }),
+    settings,
+  );
+  const slow = computeDeal(
+    listing({ askingPrice: 100 }),
+    appraisal({ comps, estimatedDaysToSell: 120 }),
+    settings,
+  );
+
+  // Same item, same comps, same asking price — only the turn speed differs.
+  assert.ok(
+    quick.maxOffer > slow.maxOffer,
+    `quick ${quick.maxOffer} should beat slow ${slow.maxOffer}`,
+  );
+  assert.ok(quick.velocity.turnsPerYear > slow.velocity.turnsPerYear);
+});
+
+test("a slow mover can be rejected at a price the same fast mover would clear", () => {
+  const comps = { low: 180, median: 220, high: 260, channel: "ebay" as const, basis: "" };
+  const asking = 120;
+  const quick = computeDeal(listing({ askingPrice: asking }), appraisal({ comps, estimatedDaysToSell: 4 }), settings);
+  const slow = computeDeal(listing({ askingPrice: asking }), appraisal({ comps, estimatedDaysToSell: 150 }), settings);
+
+  const rank = { strong: 3, workable: 2, thin: 1, pass: 0 };
+  assert.ok(
+    rank[quick.verdict] > rank[slow.verdict],
+    `quick verdict ${quick.verdict} should outrank slow verdict ${slow.verdict}`,
+  );
+});
+
+test("the verdict explains itself when speed moved the number, and stays quiet when it didn't", () => {
+  const comps = { low: 180, median: 220, high: 260, channel: "ebay" as const, basis: "" };
+  const l = listing({ askingPrice: 90 });
+
+  assert.match(
+    computeDeal(l, appraisal({ comps, estimatedDaysToSell: 150 }), settings).verdictReason,
+    /Slow mover/,
+  );
+  assert.match(
+    computeDeal(l, appraisal({ comps, estimatedDaysToSell: 4 }), settings).verdictReason,
+    /Quick turn/,
+  );
+  assert.doesNotMatch(
+    computeDeal(l, appraisal({ comps, estimatedDaysToSell: 30 }), settings).verdictReason,
+    /Slow mover|Quick turn/,
+  );
+});
+
+test("annualized return restates a flip as a year of repeating it", () => {
+  const deal = computeDeal(listing({ askingPrice: 400 }), appraisal({ estimatedDaysToSell: 14 }), settings);
+  const expected = annualize(deal.atAsking!.roi, deal.velocity);
+
+  assert.equal(deal.atAsking!.annualizedRoi, expected);
+  // 14 days to sell plus turnaround turns the cash ~21x a year.
+  assert.ok(deal.atAsking!.annualizedRoi > deal.atAsking!.roi);
 });
 
 test("a higher target ROI lowers what you can pay", () => {

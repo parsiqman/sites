@@ -116,6 +116,14 @@
           <input type="number" id="lossAllowance" step="0.01" min="0" max="1" />
         </div>
         <div class="row">
+          <span class="label">Normal days to sell<span class="hint">How long a typical flip takes you to move. Items faster than this can clear a smaller margin; slower ones have to earn more.</span></span>
+          <input type="number" id="baselineDaysToSell" step="5" min="1" />
+        </div>
+        <div class="row">
+          <span class="label">Turnaround days<span class="hint">Days between paying for something and having it listed: cleaning, testing, photos.</span></span>
+          <input type="number" id="turnaroundDays" step="1" min="0" />
+        </div>
+        <div class="row">
           <span class="label">Opening offer factor<span class="hint">0.72 = open at 72% of your walk-away price.</span></span>
           <input type="number" id="openingOfferFactor" step="0.02" min="0" max="1" />
         </div>

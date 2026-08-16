@@ -9,6 +9,8 @@ const NUMBER_FIELDS = [
   "shippingCost",
   "packagingCost",
   "lossAllowance",
+  "baselineDaysToSell",
+  "turnaroundDays",
   "openingOfferFactor",
 ] as const;
 
