@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Marketplace Copilot",
+  "version": "0.1.0",
+  "description": "Appraise the Marketplace listing you're looking at: comps, fees, profit, risks, and what to offer.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://api.anthropic.com/*",
+    "https://*.facebook.com/*",
+    "https://*.fbcdn.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/marketplace/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "Marketplace Copilot settings"
+  }
+}
